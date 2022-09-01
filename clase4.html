@@ -35,7 +35,7 @@
             .form-container {
                 display: grid;
                 grid-template-rows: auto 1fr auto;
-                width: 300px;
+                width: 300px;                
             }
     
             .logo {
@@ -47,30 +47,18 @@
     
             .title {
                 font-size: var(--lg);
-                margin-bottom: 12px;
-                text-align: center;
-            }
-    
-            .subtitle {
-                color: var(--very-light-pink);
-                font-size: var(--md);
-                font-weight: 300;
-                margin-top: 0;
-                margin-bottom: 32px;
-                text-align: center;
-            }
-    
+                margin-bottom: 30px;
+                text-align: start;
+            }    
+               
             .form {
                 display: flex;
-                flex-direction: column;
+                flex-direction: column;                
             }
 
-            .form a {
-                color: var(--hospital-green);
-                font-size: var(--sm);
-                text-align: center;
-                text-decoration: none;
-                margin-bottom: 52px;
+            .form div {
+                display: flex;
+                flex-direction: column;
             }
     
             .label {
@@ -89,20 +77,10 @@
                 margin-bottom: 12px;
             }
 
-            .input-email {
+            .input-name,
+            .input-email,
+            .input-password {
                 margin-bottom: 22px;
-            }
-
-            .secondary-button {
-                background-color: var(--white);
-                border-radius: 8px;
-                border: 1px solid var(--hospital-green);
-                color: var(--hospital-green);
-                width: 100%;
-                cursor: pointer;
-                font-size: var(--md);
-                font-weight: bold;
-                height: 50px;
             }
     
             .primary-button {
@@ -124,11 +102,14 @@
     
             @media (max-width: 640px) {
 
-                
-                .logo{
-                    display: block;
+                .form-container{
+                    height: 100%;
                 }
-               
+                
+                .form{
+                    height: 100%;
+                    justify-content: space-between;
+                }         
             }
     
         </style>
@@ -136,20 +117,22 @@
     <body>
         <div class="login">
             <div class="form-container">
-                <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
-    
+                <h1 class="title">My account</h1>
+               
                 <form action="/" class="form">
-                    <label for="email" class="label">Email adress</label>
-                    <input type="text" id="email" placeholder="pepe@domain.com" class="input input-email">
-    
-                    <label for="password" class="label">Password</label>
-                    <input type="paswsword" id="new-password" placeholder="*********" class="input input-password">
-    
-                    <input type="submit" value="Log in" class="primary-button login-button">
-                    <a href="/">Forgot my password</a>
-                </form>
+                    <div>
+                        <label for="name" class="label">Name</label>
+                    <input type="text" id="name" placeholder="Mauro" class="input input-name">
 
-                <button class="secondary-button signup-button">Sign up</button>
+                    <label for="email" class="label">Email</label>
+                    <input type="text" id="email" placeholder="pepe@domain.com" class="input input-email">
+
+                    <label for="password" class="label">Password</label>
+                    <input type="paswsword" id="password" placeholder="*********" class="input input-password">
+                    </div>
+
+                    <input type="submit" value="Create" class="primary-button login-button">
+                </form>
             </div>
             
         </div>
